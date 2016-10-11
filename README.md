@@ -5,7 +5,15 @@ Intermediate/central classes to handle tasks, folders, projects, labels, tags fo
 ## Task
 
 ```php
-$task = (new Task())
-    ->title('Buy lipstick')
-    ->
+$tags = new Tags();
+$tags->add(new Tag('shopping'));
+$tags->add(new Tag('today'));
+
+$task = (new Task('Buy lipstick'))
+    ->flagged(true)
+    ->defer(new \DateTime('+3 weeks'))
+    ->due(new \DateTime('+6 weeks'))
+    ->notes("Maybelline, shade 'Tangerine Heart'\nDon't spend more than £3.22")
+    ->tags($tags)
+    ->project(new Project('Title of project'));
 ```
