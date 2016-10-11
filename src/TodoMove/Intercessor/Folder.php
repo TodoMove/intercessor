@@ -1,5 +1,6 @@
-<?php namespace TodoMove\Intercessor;
+<?php
 
+namespace TodoMove\Intercessor;
 
 class Folder
 {

@@ -1,4 +1,6 @@
-<?php namespace TodoMove\Intercessor;
+<?php
+
+namespace TodoMove\Intercessor;
 
 class Task
 {
@@ -38,7 +40,7 @@ class Task
     protected $repeat; // TODO: Create class
     protected $comments; // TODO: difficult - i think the comments should just be converted to be put into the notes as otherwise we need to set usernames, dates, comment for comment
 
-    public function __construct($title=null)
+    public function __construct($title = null)
     {
         $this->title($title);
         $this->created(new \DateTime('now', new \DateTimeZone('UTC')));
@@ -48,7 +50,7 @@ class Task
      * @param null|string $title - Pass null to get the title, pass a string to set it
      * @return $this
      */
-    public function title($title=null)
+    public function title($title = null)
     {
         if (is_null($title)) {
             return $this->title;
@@ -63,7 +65,7 @@ class Task
      * @param null|string $notes - Pass null to get the notes, pass a string to set it
      * @return $this
      */
-    public function notes($notes=null)
+    public function notes($notes = null)
     {
         if (is_null($notes)) {
             return $this->notes;
@@ -74,7 +76,7 @@ class Task
         return $this;
     }
 
-    public function created(\DateTime $created=null)
+    public function created(\DateTime $created = null)
     {
         if (is_null($created)) {
             return $this->created_at;
@@ -89,7 +91,7 @@ class Task
         return $this;
     }
 
-    public function updated(\DateTime $updated=null)
+    public function updated(\DateTime $updated = null)
     {
         if (is_null($updated)) {
             return $this->updated_at;
@@ -100,7 +102,7 @@ class Task
         return $this;
     }
 
-    public function completed(\DateTime $completed=null)
+    public function completed(\DateTime $completed = null)
     {
         if (is_null($completed)) {
             return $this->completed_at;
@@ -111,7 +113,7 @@ class Task
         return $this;
     }
 
-    public function deleted(\DateTime $deleted=null)
+    public function deleted(\DateTime $deleted = null)
     {
         if (is_null($deleted)) {
             return $this->deleted_at;
@@ -122,7 +124,7 @@ class Task
         return $this;
     }
 
-    public function defer(\DateTime $defer=null)
+    public function defer(\DateTime $defer = null)
     {
         if (is_null($defer)) {
             return $this->defer_til;
@@ -133,7 +135,7 @@ class Task
         return $this;
     }
 
-    public function due(\DateTime $due=null)
+    public function due(\DateTime $due = null)
     {
         if (is_null($due)) {
             return $this->due_at;
@@ -150,7 +152,7 @@ class Task
      * @param Tags|null $tags - pass to set, don't pass to get
      * @return $this|Tags
      */
-    public function tags(Tags $tags=null)
+    public function tags(Tags $tags = null)
     {
         if (is_null($tags)) {
             return $this->tags;
@@ -162,7 +164,7 @@ class Task
     }
 
     // TODO: Create class
-    public function repeat($repeat=null)
+    public function repeat($repeat = null)
     {
         if (is_null($repeat)) {
             return $this->repeat;
@@ -174,7 +176,7 @@ class Task
     }
 
     /**
-     * Return's a const STATUS_COMPLETED or STATUS_ACTIVE, ignoring whether it is deleted
+     * Return's a const STATUS_COMPLETED or STATUS_ACTIVE, ignoring whether it is deleted.
      *
      * @return string
      */
@@ -194,7 +196,7 @@ class Task
         return $this;
     }
 
-    public function project(Project $project=null)
+    public function project(Project $project = null)
     {
         if (is_null($project)) {
             return $this->project;

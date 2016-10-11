@@ -1,10 +1,12 @@
-<?php namespace TodoMove\Intercessor;
+<?php
+
+namespace TodoMove\Intercessor;
 
 class Tag
 {
     protected $title;
 
-    public function __construct($title=null)
+    public function __construct($title = null)
     {
         $this->title($title);
     }
@@ -13,7 +15,7 @@ class Tag
      * @param null|string $title - Pass null to get the title, pass a string to set it
      * @return $this
      */
-    public function title($title=null)
+    public function title($title = null)
     {
         if (is_null($title)) {
             return $this->title;
