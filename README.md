@@ -45,7 +45,7 @@ $project
 ## Tag
 
 ```php
-$tag = new Tag('Title of tag'); // Personally always lowercase
+$tag = new Tag('errands'); // Personally always lowercase
 ```
 
 ## Tags
