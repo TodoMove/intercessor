@@ -2,7 +2,6 @@
 
 use TodoMove\Intercessor\ProjectFolder;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ProjectFolderSpec extends ObjectBehavior
 {

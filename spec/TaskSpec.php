@@ -4,7 +4,6 @@ use TodoMove\Intercessor\Tag;
 use TodoMove\Intercessor\Tags;
 use TodoMove\Intercessor\Task;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class TaskSpec extends ObjectBehavior
 {

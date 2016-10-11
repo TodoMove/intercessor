@@ -208,18 +208,18 @@ class Task
     public function __toString()
     {
         return json_encode([
-            'title' => $this->title(),
-            'notes' => $this->notes(),
-            'flagged' => $this->flagged(),
-            'project' => $this->project(),
-            'tags' => $this->tags(),
-            'created_at' => $this->created(),
-            'updated_at' => $this->updated(),
-            'deleted_at' => $this->deleted(),
-            'completed_at' => $this->completed(),
-            'due_at' => $this->due(),
-            'defer_til' => $this->defer(),
-            'status' => $this->status(),
+            'title'         => $this->title(),
+            'notes'         => $this->notes(),
+            'flagged'       => $this->flagged(),
+            'project'       => $this->project(),
+            'tags'          => $this->tags(),
+            'created_at'    => $this->created(),
+            'updated_at'    => $this->updated(),
+            'deleted_at'    => $this->deleted(),
+            'completed_at'  => $this->completed(),
+            'due_at'        => $this->due(),
+            'defer_til'     => $this->defer(),
+            'status'        => $this->status(),
         ]);
     }
 }

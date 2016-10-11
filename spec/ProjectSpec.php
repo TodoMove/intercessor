@@ -2,7 +2,6 @@
 
 use TodoMove\Intercessor\Project;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class ProjectSpec extends ObjectBehavior
 {

@@ -2,7 +2,6 @@
 
 use TodoMove\Intercessor\Tag;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class TagSpec extends ObjectBehavior
 {

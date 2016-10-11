@@ -3,7 +3,6 @@
 use TodoMove\Intercessor\Tag;
 use TodoMove\Intercessor\Tags;
 use PhpSpec\ObjectBehavior;
-use Prophecy\Argument;
 
 class TagsSpec extends ObjectBehavior
 {
