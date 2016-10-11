@@ -49,4 +49,11 @@ class Folder
 
         return $this;
     }
+
+    public function child(Folder $child)
+    {
+        $this->children[] = $child;
+
+        return $this;
+    }
 }
