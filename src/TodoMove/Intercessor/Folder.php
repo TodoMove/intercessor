@@ -4,5 +4,4 @@ namespace TodoMove\Intercessor;
 
 class Folder
 {
-
 }

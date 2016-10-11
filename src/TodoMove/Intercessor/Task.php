@@ -48,6 +48,7 @@ class Task
 
     /**
      * @param null|string $title - Pass null to get the title, pass a string to set it
+     *
      * @return $this
      */
     public function title($title = null)
@@ -63,6 +64,7 @@ class Task
 
     /**
      * @param null|string $notes - Pass null to get the notes, pass a string to set it
+     *
      * @return $this
      */
     public function notes($notes = null)
@@ -147,9 +149,10 @@ class Task
     }
 
     /**
-     * This needs a tag collection
+     * This needs a tag collection.
      *
      * @param Tags|null $tags - pass to set, don't pass to get
+     *
      * @return $this|Tags
      */
     public function tags(Tags $tags = null)
@@ -185,7 +188,7 @@ class Task
         return (!is_null($this->completed())) ? self::STATUS_COMPLETED : self::STATUS_ACTIVE;
     }
 
-    public function flagged($flagged=null)
+    public function flagged($flagged = null)
     {
         if (is_null($flagged)) {
             return $this->flagged;
