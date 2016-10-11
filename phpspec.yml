@@ -1,0 +1,5 @@
+suites:
+    acme_suite:
+        namespace: TodoMove\Intercessor
+        psr4_prefix: TodoMove\Intercessor
+bootstrap: spec/bootstrap.php
