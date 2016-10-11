@@ -9,6 +9,9 @@ class Folder
     /** @var Folder */
     protected $parent = null;
 
+    /** @var Folder[] */
+    protected $children = [];
+
     public function __construct($name = null)
     {
         $this->name($name);
@@ -25,13 +28,24 @@ class Folder
         return $this;
     }
 
-    public function parent($parent = null)
+    public function parent(Folder $parent = null)
     {
         if (is_null($parent)) {
             return $this->parent;
         }
 
         $this->parent = $parent;
+
+        return $this;
+    }
+
+    public function children(array $children = null)
+    {
+        if (is_null($children)) {
+            return $this->children;
+        }
+
+        $this->children = $children;
 
         return $this;
     }
