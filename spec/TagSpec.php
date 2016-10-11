@@ -1,7 +1,9 @@
-<?php namespace spec\TodoMove\Intercessor;
+<?php
 
-use TodoMove\Intercessor\Tag;
+namespace spec\TodoMove\Intercessor;
+
 use PhpSpec\ObjectBehavior;
+use TodoMove\Intercessor\Tag;
 
 class TagSpec extends ObjectBehavior
 {

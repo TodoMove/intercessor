@@ -2,8 +2,8 @@
 
 namespace spec\TodoMove\Intercessor;
 
-use TodoMove\Intercessor\TagFolder;
 use PhpSpec\ObjectBehavior;
+use TodoMove\Intercessor\TagFolder;
 
 class TagFolderSpec extends ObjectBehavior
 {

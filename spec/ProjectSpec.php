@@ -1,7 +1,9 @@
-<?php namespace spec\TodoMove\Intercessor;
+<?php
 
-use TodoMove\Intercessor\Project;
+namespace spec\TodoMove\Intercessor;
+
 use PhpSpec\ObjectBehavior;
+use TodoMove\Intercessor\Project;
 
 class ProjectSpec extends ObjectBehavior
 {
