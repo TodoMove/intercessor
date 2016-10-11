@@ -12,6 +12,9 @@ class Folder
     /** @var Folder[] */
     protected $children = [];
 
+    /** @var Project[] */
+    protected $projects = [];
+
     public function __construct($name = null)
     {
         $this->name($name);
@@ -53,6 +56,24 @@ class Folder
     public function child(Folder $child)
     {
         $this->children[] = $child;
+
+        return $this;
+    }
+
+    public function projects(array $projects = null)
+    {
+        if (is_null($projects)) {
+            return $this->projects;
+        }
+
+        $this->projects = $projects;
+
+        return $this;
+    }
+
+    public function project(Project $project)
+    {
+        $this->projects[] = $project;
 
         return $this;
     }

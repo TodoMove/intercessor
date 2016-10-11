@@ -4,8 +4,8 @@ namespace TodoMove\Intercessor;
 
 class Task
 {
-    const STATUS_ACTIVE = 'active';
-    const STATUS_COMPLETED = 'completed';
+    const ACTIVE = 'active';
+    const COMPLETED = 'complete';
 
     protected $title = '';
     protected $notes = '';

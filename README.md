@@ -37,8 +37,7 @@ $project
     ->tasks($tasks)
     ->status(Project::ACTIVE)
     ->repeat(new Repeat())
-    ->review(new Repeat())
-    ->parent($parentProject);
+    ->review(new Repeat());
 ```
 
 

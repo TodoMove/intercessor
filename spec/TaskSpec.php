@@ -84,7 +84,7 @@ class TaskSpec extends ObjectBehavior
     public function it_gives_a_status()
     {
         $this->status()->shouldReturn(Task::STATUS_ACTIVE);
-        $this->completed(new \DateTime())->status()->shouldReturn(Task::STATUS_COMPLETED);
+        $this->completed(new \DateTime())->status()->shouldReturn(Task::COMPLETED);
     }
 
     public function it_can_set_and_get_repeat()
