@@ -11,4 +11,10 @@ class ProjectSpec extends ObjectBehavior
     {
         $this->shouldHaveType(Project::class);
     }
+
+    public function it_can_set_the_project_name_on_construct()
+    {
+        $this->beConstructedWith('Acme Inc.');
+        $this->name()->shouldReturn('Acme Inc.');
+    }
 }

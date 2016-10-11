@@ -26,7 +26,7 @@ class RepeatSpec extends ObjectBehavior
                 'nextDate'  => '2016-10-15 00:00:00',
             ],
             [
-                'userInput' => 'every week',
+                'userInput' => 'every 1 week', //TODO: Support without number
                 'fromDate'  => '2016-10-20 00:00:00',
                 'nextDate'  => '2016-10-27 00:00:00',
             ],

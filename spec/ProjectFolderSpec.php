@@ -11,4 +11,10 @@ class ProjectFolderSpec extends ObjectBehavior
     {
         $this->shouldHaveType(ProjectFolder::class);
     }
+
+    public function it_can_set_the_folder_name_on_construct()
+    {
+        $this->beConstructedWith('Acme Inc.');
+        $this->name()->shouldReturn('Acme Inc.');
+    }
 }
