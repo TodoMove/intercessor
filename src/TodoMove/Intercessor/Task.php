@@ -21,6 +21,9 @@ class Task
     protected $completed_at = null;
 
     /** @var \DateTime|null */
+    protected $deleted_at = null;
+
+    /** @var \DateTime|null */
     protected $due_at = null;
 
     /** @var \DateTime|null */
@@ -28,6 +31,9 @@ class Task
 
     /** @var Tags */
     protected $tags;
+
+    /** @var Project */
+    protected $project;
 
     protected $repeat; // TODO: Create class
     protected $comments; // TODO: difficult - i think the comments should just be converted to be put into the notes as otherwise we need to set usernames, dates, comment for comment
@@ -105,6 +111,17 @@ class Task
         return $this;
     }
 
+    public function deleted(\DateTime $deleted=null)
+    {
+        if (is_null($deleted)) {
+            return $this->deleted_at;
+        }
+
+        $this->deleted_at = $deleted;
+
+        return $this;
+    }
+
     public function defer(\DateTime $defer=null)
     {
         if (is_null($defer)) {
@@ -175,5 +192,34 @@ class Task
         $this->flagged = $flagged;
 
         return $this;
+    }
+
+    public function project(Project $project=null)
+    {
+        if (is_null($project)) {
+            return $this->project;
+        }
+
+        $this->project = $project;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return json_encode([
+            'title' => $this->title(),
+            'notes' => $this->notes(),
+            'flagged' => $this->flagged(),
+            'project' => $this->project(),
+            'tags' => $this->tags(),
+            'created_at' => $this->created(),
+            'updated_at' => $this->updated(),
+            'deleted_at' => $this->deleted(),
+            'completed_at' => $this->completed(),
+            'due_at' => $this->due(),
+            'defer_til' => $this->defer(),
+            'status' => $this->status(),
+        ]);
     }
 }

@@ -73,11 +73,11 @@ class TaskSpec extends ObjectBehavior
         $this->tags($tagCollection)->shouldReturn($this);
         $this->tags()->shouldReturn($tagCollection);
         $this->tags()->shouldImplement(\Countable::class);
-        $this->tags()->count()->shouldReturn(3);
+        $this->tags()->shouldHaveCount(3);
 
         // we can remove tags
         $tagCollection->remove($tag3);
-        $this->tags()->count()->shouldReturn(2);
+        $this->tags()->shouldHaveCount(2);
     }
 
     public function it_gives_a_status()
@@ -92,9 +92,6 @@ class TaskSpec extends ObjectBehavior
         $this->repeat()->shouldReturn('need to create a class for this');
     }
 
-    // Flagged is interesting.  It's mainly just 'high priority', or 'today', but that could be done with tags?
-    // Should this add a tag of flagged?
-
     public function it_can_be_flagged()
     {
         $this->flagged()->shouldReturn(false);
@@ -107,5 +104,14 @@ class TaskSpec extends ObjectBehavior
     public function it_sets_created_at_on_instantiation()
     {
         $this->created()->shouldBeAnInstanceOf(\DateTime::class);
+    }
+
+    //TODO: Figure out how to test this with PHPSpec
+    public function it_returns_valid_json_when_cast_to_string()
+    {
+        $this->__toString()->shouldBeString();
+        $json = \json_decode((string) $this->getWrappedObject(), true);
+//        $this->shouldBeBool(is_null($json));
+//        $this->shouldEqual(JSON_ERROR_NONE, \json_last_error());
     }
 }
