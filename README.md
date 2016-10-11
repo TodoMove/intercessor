@@ -1,4 +1,7 @@
 # Intercessor
+
+[![StyleCI](https://styleci.io/repos/70615078/shield?style=flat)](https://styleci.io/repos/70615078)
+
 Intermediate/central classes to handle tasks, folders, projects, labels, tags for todo applications.  
 
 This will be used as an intermediary between different todo list managers: OmniFocus, Wunderlist, Todoist to start with.
