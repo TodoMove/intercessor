@@ -17,18 +17,18 @@ class RepeatSpec extends ObjectBehavior
         $dates = [
             [
                 'userInput' => 'every 2 day',
-                'fromDate' => '2016-10-11 10:00:00',
-                'nextDate' => '2016-10-13 10:00:00',
+                'fromDate'  => '2016-10-11 10:00:00',
+                'nextDate'  => '2016-10-13 10:00:00',
             ],
             [
                 'userInput' => 'every 2 days',
-                'fromDate' => '2016-10-13 00:00:00',
-                'nextDate' => '2016-10-15 00:00:00',
+                'fromDate'  => '2016-10-13 00:00:00',
+                'nextDate'  => '2016-10-15 00:00:00',
             ],
             [
                 'userInput' => 'every week',
-                'fromDate' => '2016-10-20 00:00:00',
-                'nextDate' => '2016-10-27 00:00:00',
+                'fromDate'  => '2016-10-20 00:00:00',
+                'nextDate'  => '2016-10-27 00:00:00',
             ],
         ];
 
