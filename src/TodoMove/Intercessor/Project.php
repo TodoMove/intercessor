@@ -4,9 +4,9 @@ namespace TodoMove\Intercessor;
 
 class Project
 {
-    const ACTIVE    = 'active';
-    const INACTIVE  = 'inactive';
-    const DROPPED   = 'dropped';
+    const ACTIVE = 'active';
+    const INACTIVE = 'inactive';
+    const DROPPED = 'dropped';
     const COMPLETED = 'complete';
 
     protected $name;
