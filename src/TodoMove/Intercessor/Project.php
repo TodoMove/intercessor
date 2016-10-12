@@ -72,7 +72,13 @@ class Project
 
     public function status($status = null)
     {
+        if (is_null($status)) {
+            return $this->status;
+        }
 
+        $this->status = $status;
+
+        return $this;
     }
 
 }
