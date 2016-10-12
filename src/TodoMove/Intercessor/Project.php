@@ -47,7 +47,7 @@ class Project
 
     public function task(Task $task)
     {
-        $this->task[] = $task;
+        $this->tasks[] = $task;
 
         return $this;
     }
