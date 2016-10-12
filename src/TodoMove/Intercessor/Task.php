@@ -38,7 +38,6 @@ class Task
     protected $project;
 
     protected $repeat; // TODO: Create class
-    protected $comments; // TODO: difficult - i think the comments should just be converted to be put into the notes as otherwise we need to set usernames, dates, comment for comment
 
     public function __construct($title = null)
     {
