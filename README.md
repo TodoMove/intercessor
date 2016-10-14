@@ -6,6 +6,10 @@ Intermediate/standardised classes to handle tasks, folders, projects, labels, ta
 
 This will be used as an intermediary between different todo list managers: OmniFocus, Wunderlist, Todoist to start with.
 
+## Installation
+
+`composer require todomove/intercessor`
+
 ## Task
 
 ```php
