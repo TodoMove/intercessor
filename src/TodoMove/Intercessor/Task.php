@@ -165,8 +165,12 @@ class Task
         return $this;
     }
 
-    // TODO: Create class
-    public function repeat($repeat = null)
+    /**
+     * @param Repeat|null $repeat
+     *
+     * @return $this|Repeat
+     */
+    public function repeat(Repeat $repeat = null)
     {
         if (is_null($repeat)) {
             return $this->repeat;
@@ -184,7 +188,7 @@ class Task
      */
     public function status()
     {
-        return (!is_null($this->completed())) ? self::STATUS_COMPLETED : self::STATUS_ACTIVE;
+        return (!is_null($this->completed())) ? self::COMPLETED : self::ACTIVE;
     }
 
     public function flagged($flagged = null)
