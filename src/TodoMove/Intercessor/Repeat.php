@@ -43,9 +43,14 @@ class Repeat
         return new \DateInterval($intervalSpec);
     }
 
-    public function nextDate(\DateTime $withDate = null)
+    public function nextDate($withDate = null)
     {
-        $withDate = $withDate ?: new \DateTime();
+        if (is_string($withDate)) {
+            $withDate = new \DateTime($withDate);
+        } elseif(is_null($withDate)) {
+            $withDate = new \DateTime();
+        }
+
         $datePeriod = new \DatePeriod($withDate, $this->interval(), 1);
 
         foreach ($datePeriod as $date) {
