@@ -121,13 +121,21 @@ class RepeatSpec extends ObjectBehavior
         $this->daily()->count()->shouldReturn(1);
         $this->daily()->type()->shouldReturn(Repeat::DAY);
 
-        //$this->everyMorning()->count()->shouldReturn(1);
-        //$this->everyMorning()->type()->shouldReturn(Repeat::DAY);
+        $this->everyMorning()->count()->shouldReturn(1);
+        $this->everyMorning()->type()->shouldReturn(Repeat::DAY);
 
-//        $this->morning()
-//            ->nextDate(new \DateTime('2016-12-12 10:10:10'))
-//            ->format('Y-m-d H:i:s')
-//            ->shouldReturn('2016-12-12 06:00:00'); // It should overwrite the time to 6am, since it's morning time
+        $this->everyMorning()
+            ->nextDate(new \DateTime('2016-12-12 10:10:10'))
+            ->format('Y-m-d H:i:s')
+            ->shouldReturn('2016-12-13 06:00:00'); // It should overwrite the time to 6am, since it's morning time
+
+        $this->everyNight()->count()->shouldReturn(1);
+        $this->everyNight()->type()->shouldReturn(Repeat::DAY);
+
+        $this->everyNight()
+            ->nextDate(new \DateTime('2016-12-12 10:10:10'))
+            ->format('Y-m-d H:i:s')
+            ->shouldReturn('2016-12-13 20:00:00'); // It should overwrite the time to 8pm, since it's evening time
 
         $this->weekly()->count()->shouldReturn(1);
         $this->weekly()->type()->shouldReturn(Repeat::WEEK);
