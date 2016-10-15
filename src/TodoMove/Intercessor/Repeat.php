@@ -71,7 +71,7 @@ class Repeat
         $validKeys = (count(array_diff(['hour', 'minute', 'second'], array_keys($time))) === 0);
 
         if (false === $validKeys) {
-            Throw new \InvalidArgumentException('Invalid arguments provided: '.implode($time));
+            throw new \InvalidArgumentException('Invalid arguments provided: '.implode($time));
         }
 
         $this->time = $time;
