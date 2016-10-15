@@ -33,6 +33,8 @@ $repeat->fortnightly();
 $repeat->monthly();
 $repeat->bimonthly();
 $repeat->yearly();
+$repeat->everyMorning(); // 6 am
+$repeat->everyNight(); // 8 pm
 
 $repeat->count(6)->type(Repeat::MONTH);
 
