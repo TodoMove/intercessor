@@ -3,6 +3,7 @@
 namespace spec\TodoMove\Intercessor;
 
 use PhpSpec\ObjectBehavior;
+use TodoMove\Intercessor\Repeat;
 use TodoMove\Intercessor\Tag;
 use TodoMove\Intercessor\Tags;
 use TodoMove\Intercessor\Task;
@@ -83,14 +84,15 @@ class TaskSpec extends ObjectBehavior
 
     public function it_gives_a_status()
     {
-        $this->status()->shouldReturn(Task::STATUS_ACTIVE);
+        $this->status()->shouldReturn(Task::ACTIVE);
         $this->completed(new \DateTime())->status()->shouldReturn(Task::COMPLETED);
     }
 
     public function it_can_set_and_get_repeat()
     {
-        $this->repeat('need to create a class for this')->shouldReturn($this);
-        $this->repeat()->shouldReturn('need to create a class for this');
+        $repeat = new Repeat();
+        $this->repeat($repeat)->shouldReturn($this);
+        $this->repeat()->shouldReturn($repeat);
     }
 
     public function it_can_be_flagged()
