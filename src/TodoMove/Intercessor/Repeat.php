@@ -71,7 +71,7 @@ class Repeat
         $validKeys = (count(array_diff(['hour', 'minute', 'second'], array_keys($time))) === 0);
 
         if (false === $validKeys) {
-            Throw new \InvalidARgumentException('Invalid arguments provided: '.implode($time));
+            Throw new \InvalidArgumentException('Invalid arguments provided: '.implode($time));
         }
 
         $this->time = $time;
@@ -80,7 +80,7 @@ class Repeat
     }
 
     /**
-     * null = now, string will be converted to a DateTime object so will need to be a valid argument to \DateTime::construct
+     * null = now, string will be converted to a DateTime object so will need to be a valid argument to \DateTime::construct.
      *
      * @param \DateTime|string|null $withDate - Which date should we use to calculate the next occurence?
      *
@@ -114,7 +114,7 @@ class Repeat
     public function everyMorning()
     {
         $this->time([
-            'hour' => 6,
+            'hour'   => 6,
             'minute' => 0,
             'second' => 0,
         ]);
