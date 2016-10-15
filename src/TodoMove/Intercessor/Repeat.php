@@ -11,7 +11,7 @@ class Repeat
     const YEAR = 'Y';
 
     protected $type = self::DAY;
-    protected $count = 1;
+    protected $interval = 1;
     protected $time = [];
 
     /**
@@ -31,17 +31,17 @@ class Repeat
     }
 
     /**
-     * @param null $count
+     * @param null $interval
      *
      * @return $this|int
      */
-    public function count($count = null)
+    public function interval($interval = null)
     {
-        if (is_null($count)) {
-            return $this->count;
+        if (is_null($interval)) {
+            return $this->interval;
         }
 
-        $this->count = $count;
+        $this->interval = $interval;
 
         return $this;
     }
@@ -49,10 +49,10 @@ class Repeat
     /**
      * @return \DateInterval
      */
-    public function interval()
+    public function dateInterval()
     {
         $periodDefiner = ($this->type() == self::HOUR) ? 'PT' : 'P';
-        $intervalSpec = "{$periodDefiner}{$this->count()}{$this->type()}";
+        $intervalSpec = "{$periodDefiner}{$this->interval()}{$this->type()}";
 
         return new \DateInterval($intervalSpec);
     }
@@ -98,7 +98,7 @@ class Repeat
             $withDate->setTime($this->time()['hour'], $this->time()['minute'], $this->time()['second']);
         }
 
-        $datePeriod = new \DatePeriod($withDate, $this->interval(), 1);
+        $datePeriod = new \DatePeriod($withDate, $this->dateInterval(), 1);
 
         foreach ($datePeriod as $date) {
         }
@@ -143,7 +143,7 @@ class Repeat
      */
     public function daily()
     {
-        $this->count(1);
+        $this->interval(1);
         $this->type(self::DAY);
 
         return $this;
@@ -154,7 +154,7 @@ class Repeat
      */
     public function weekly()
     {
-        $this->count(1);
+        $this->interval(1);
         $this->type(self::WEEK);
 
         return $this;
@@ -165,7 +165,7 @@ class Repeat
      */
     public function fortnightly()
     {
-        $this->count(2);
+        $this->interval(2);
         $this->type(self::WEEK);
 
         return $this;
@@ -176,7 +176,7 @@ class Repeat
      */
     public function biweekly()
     {
-        $this->count(2);
+        $this->interval(2);
         $this->type(self::WEEK);
 
         return $this;
@@ -187,7 +187,7 @@ class Repeat
      */
     public function monthly()
     {
-        $this->count(1);
+        $this->interval(1);
         $this->type(self::MONTH);
 
         return $this;
@@ -198,7 +198,7 @@ class Repeat
      */
     public function bimonthly()
     {
-        $this->count(2);
+        $this->interval(2);
         $this->type(self::MONTH);
 
         return $this;
@@ -209,7 +209,7 @@ class Repeat
      */
     public function yearly()
     {
-        $this->count(1);
+        $this->interval(1);
         $this->type(self::YEAR);
 
         return $this;
