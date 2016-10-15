@@ -132,7 +132,7 @@ class RepeatSpec extends ObjectBehavior
         $this->weekly()->count()->shouldReturn(1);
         $this->weekly()->type()->shouldReturn(Repeat::WEEK);
 
-        $this->fortnightly()->count()->shouldReturn(1);
+        $this->fortnightly()->count()->shouldReturn(2);
         $this->fortnightly()->type()->shouldReturn(Repeat::WEEK);
 
         $this->biweekly()->count()->shouldReturn(2);
@@ -146,5 +146,20 @@ class RepeatSpec extends ObjectBehavior
 
         $this->yearly()->count()->shouldReturn(1);
         $this->yearly()->type()->shouldReturn(Repeat::YEAR);
+    }
+
+    public function it_accepts_a_valid_string_for_next_date_argument()
+    {
+        $this->daily()->nextDate('2016-03-01')->format('Y-m-d')->shouldReturn('2016-03-02');
+    }
+
+    // This isn't ideal - but we can't _not_ repeat and miss a month?
+    // This means we won't be able to say 'last day of the month', though people shouldn't ask to repeat on the 31st
+    // But this limits us to 1 - 28th monthly repeats without modifying the day
+    public function it_is_a_day_out_when_adding_a_month_where_the_day_doesnt_exist_in_that_month()
+    {
+        $this->monthly()
+            ->nextDate('2016-10-31')->format('Y-m-d')
+            ->shouldReturn('2016-12-01');
     }
 }
