@@ -22,6 +22,24 @@ $task = (new Task('Buy lipstick'))
     ->project(new Project('Title of project'));
 ```
 
+## Repeat
+
+```php
+$repeat = new Repeat();
+$repeat->daily();
+$repeat->weekly();
+$repeat->biweekly();
+$repeat->fortnightly();
+$repeat->monthly();
+$repeat->bimonthly();
+$repeat->yearly();
+
+$repeat->count(6)->type(Repeat::MONTH);
+
+$repeat->daily()
+    ->nextDate(new \DateTime('2016-10-15 08:00:00')); // Returns DateTime object for '2016-10-16 08:00:00'
+```
+
 ## Tasks
 
 ```php
