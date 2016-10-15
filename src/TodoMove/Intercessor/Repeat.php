@@ -16,6 +16,7 @@ class Repeat
 
     /**
      * @param null $type
+     *
      * @return $this|string
      */
     public function type($type = null)
@@ -31,6 +32,7 @@ class Repeat
 
     /**
      * @param null $count
+     *
      * @return $this|int
      */
     public function count($count = null)
@@ -57,6 +59,7 @@ class Repeat
 
     /**
      * @param array|null $time - must pass 'hour', 'minute' and 'second' keys to be used with \DateTime->setTime()
+     *
      * @return $this
      */
     public function time(array $time = null)
