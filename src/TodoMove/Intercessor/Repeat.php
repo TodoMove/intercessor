@@ -71,7 +71,7 @@ class Repeat
         $validKeys = (count(array_diff(['hour', 'minute', 'second'], array_keys($time))) === 0);
 
         if (false === $validKeys) {
-            Throw new \InvalidARgumentException('Invalid arguments provided: ' . implode($time));
+            Throw new \InvalidARgumentException('Invalid arguments provided: '.implode($time));
         }
 
         $this->time = $time;
@@ -81,6 +81,7 @@ class Repeat
 
     /**
      * null = now, string will be converted to a DateTime object so will need to be a valid argument to \DateTime::construct
+     *
      * @param \DateTime|string|null $withDate - Which date should we use to calculate the next occurence?
      *
      * @return mixed
@@ -89,12 +90,11 @@ class Repeat
     {
         if (is_string($withDate)) {
             $withDate = new \DateTime($withDate);
-        } elseif(is_null($withDate)) {
+        } elseif (is_null($withDate)) {
             $withDate = new \DateTime();
         }
 
-        if ($this->time())
-        {
+        if ($this->time()) {
             $withDate->setTime($this->time()['hour'], $this->time()['minute'], $this->time()['second']);
         }
 
@@ -107,7 +107,7 @@ class Repeat
     }
 
     /**
-     * Sets time to 6am, repeat daily
+     * Sets time to 6am, repeat daily.
      *
      * @return $this
      */
@@ -123,14 +123,14 @@ class Repeat
     }
 
     /**
-     * Sets time to 8pm, repeat to daily
+     * Sets time to 8pm, repeat to daily.
      *
      * @return $this
      */
     public function everyNight()
     {
         $this->time([
-            'hour' => 20,
+            'hour'   => 20,
             'minute' => 0,
             'second' => 0,
         ]);
