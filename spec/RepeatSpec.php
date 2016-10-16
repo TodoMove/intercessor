@@ -170,4 +170,10 @@ class RepeatSpec extends ObjectBehavior
             ->nextDate('2016-10-31')->format('Y-m-d')
             ->shouldReturn('2016-12-01');
     }
+
+    public function it_has_an_id()
+    {
+        $this->id()->shouldBeString();
+        $this->id()->shouldMatch('/[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{8}/');
+    }
 }

@@ -4,6 +4,8 @@ namespace TodoMove\Intercessor;
 
 class Folder
 {
+    use \TodoMove\Intercessor\Traits\Identifiable;
+
     protected $name;
 
     /** @var Folder */
@@ -18,6 +20,7 @@ class Folder
     public function __construct($name = null)
     {
         $this->name($name);
+        $this->defaultId();
     }
 
     public function name($name = null)

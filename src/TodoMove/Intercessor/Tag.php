@@ -4,11 +4,14 @@ namespace TodoMove\Intercessor;
 
 class Tag
 {
-    protected $title;
+    use \TodoMove\Intercessor\Traits\Identifiable;
+
+    protected $title = '';
 
     public function __construct($title = null)
     {
         $this->title($title);
+        $this->defaultId();
     }
 
     /**

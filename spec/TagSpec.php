@@ -7,6 +7,10 @@ use TodoMove\Intercessor\Tag;
 
 class TagSpec extends ObjectBehavior
 {
+    public function let()
+    {
+        $this->beConstructedWith('shopping');
+    }
     public function it_is_initializable()
     {
         $this->shouldHaveType(Tag::class);
@@ -15,7 +19,12 @@ class TagSpec extends ObjectBehavior
     // we use 'title' as we could have colours or something in future
     public function it_can_set_tag_title()
     {
-        $this->beConstructedWith('shopping');
         $this->title()->shouldReturn('shopping');
+    }
+
+    public function it_has_an_id()
+    {
+        $this->id()->shouldBeString();
+        $this->id()->shouldMatch('/[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{8}/');
     }
 }

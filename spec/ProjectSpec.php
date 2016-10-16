@@ -17,4 +17,11 @@ class ProjectSpec extends ObjectBehavior
         $this->beConstructedWith('Acme Inc.');
         $this->name()->shouldReturn('Acme Inc.');
     }
+
+
+    public function it_has_an_id()
+    {
+        $this->id()->shouldBeString();
+        $this->id()->shouldMatch('/[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{8}/');
+    }
 }

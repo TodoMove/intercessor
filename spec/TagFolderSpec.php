@@ -11,4 +11,10 @@ class TagFolderSpec extends ObjectBehavior
     {
         $this->shouldHaveType(TagFolder::class);
     }
+
+    public function it_has_an_id()
+    {
+        $this->id()->shouldBeString();
+        $this->id()->shouldMatch('/[a-z0-9]{8}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{4}\-[a-z0-9]{8}/');
+    }
 }

@@ -4,6 +4,8 @@ namespace TodoMove\Intercessor;
 
 class Repeat
 {
+    use \TodoMove\Intercessor\Traits\Identifiable;
+
     const HOUR = 'H';
     const DAY = 'D';
     const WEEK = 'W';
@@ -14,6 +16,10 @@ class Repeat
     protected $interval = 1;
     protected $time = [];
 
+    public function __construct()
+    {
+        $this->defaultId();
+    }
     /**
      * @param null $type
      *

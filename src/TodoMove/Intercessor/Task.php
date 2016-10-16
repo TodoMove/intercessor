@@ -4,6 +4,8 @@ namespace TodoMove\Intercessor;
 
 class Task
 {
+    use \TodoMove\Intercessor\Traits\Identifiable;
+
     const ACTIVE = 'active';
     const COMPLETED = 'complete';
 
@@ -43,6 +45,7 @@ class Task
     {
         $this->title($title);
         $this->created(new \DateTime('now', new \DateTimeZone('UTC')));
+        $this->defaultId();
     }
 
     /**

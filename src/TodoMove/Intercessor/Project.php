@@ -4,6 +4,8 @@ namespace TodoMove\Intercessor;
 
 class Project
 {
+    use \TodoMove\Intercessor\Traits\Identifiable;
+
     const ACTIVE = 'active';
     const INACTIVE = 'inactive';
     const DROPPED = 'dropped';
@@ -21,6 +23,7 @@ class Project
     public function __construct($name = null)
     {
         $this->name($name);
+        $this->defaultId();
     }
 
     public function name($name = null)
