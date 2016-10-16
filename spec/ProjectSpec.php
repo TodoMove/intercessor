@@ -18,7 +18,6 @@ class ProjectSpec extends ObjectBehavior
         $this->name()->shouldReturn('Acme Inc.');
     }
 
-
     public function it_has_an_id()
     {
         $this->id()->shouldBeString();

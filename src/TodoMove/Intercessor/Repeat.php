@@ -20,6 +20,7 @@ class Repeat
     {
         $this->defaultId();
     }
+
     /**
      * @param null $type
      *

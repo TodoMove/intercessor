@@ -4,17 +4,15 @@ namespace TodoMove\Intercessor\Service;
 
 use TodoMove\Intercessor\Project;
 use TodoMove\Intercessor\ProjectFolder;
-use TodoMove\Intercessor\Repeat;
 use TodoMove\Intercessor\Tag;
-use TodoMove\Intercessor\Tags;
 use TodoMove\Intercessor\Task;
 
-abstract class AbstractReader implements TodoMove\Intercessor\Contracts\Service\Reader
+abstract class AbstractReader implements \TodoMove\Intercessor\Contracts\Service\Reader
 {
-    private $tags       = [];
-    private $folders    = [];
-    private $projects   = [];
-    private $tasks      = [];
+    private $tags = [];
+    private $folders = [];
+    private $projects = [];
+    private $tasks = [];
 
     /**
      * @return Tag[]
@@ -87,5 +85,4 @@ abstract class AbstractReader implements TodoMove\Intercessor\Contracts\Service\
     {
         return $this->projects[$projectId];
     }
-
 }

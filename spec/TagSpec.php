@@ -11,6 +11,7 @@ class TagSpec extends ObjectBehavior
     {
         $this->beConstructedWith('shopping');
     }
+
     public function it_is_initializable()
     {
         $this->shouldHaveType(Tag::class);

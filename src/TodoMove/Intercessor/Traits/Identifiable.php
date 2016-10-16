@@ -2,7 +2,6 @@
 
 namespace TodoMove\Intercessor\Traits;
 
-
 use Ramsey\Uuid\Uuid;
 
 trait Identifiable

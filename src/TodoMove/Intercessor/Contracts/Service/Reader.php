@@ -2,14 +2,15 @@
 
 namespace TodoMove\Intercessor\Contracts\Service;
 
-interface Reader {
+interface Reader
+{
     /**
      * @return Tag[]
      */
     public function tags();
 
     /**
-     * @param $tagID - tagId $tag->id()
+     * @param $tagID - tagId from $tag->id().
      *
      * @return Tag
      */
@@ -21,7 +22,7 @@ interface Reader {
     public function tasks();
 
     /**
-     * @param $taskId - taskId from OmniFocus's XML
+     * @param $taskId - taskId from $task->id().
      *
      * @return Task
      */
@@ -33,7 +34,7 @@ interface Reader {
     public function folders();
 
     /**
-     * @param $folderId
+     * @param $folderId - folderId from $folder->id().
      *
      * @return ProjectFolder
      */
@@ -45,7 +46,7 @@ interface Reader {
     public function projects();
 
     /**
-     * @param $projectId
+     * @param $projectId - projectId from $project->id().
      *
      * @return Project
      */
