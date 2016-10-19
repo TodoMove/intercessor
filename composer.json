@@ -11,6 +11,9 @@
     "autoload": {
         "psr-4": { "" : "src/" }
     },
+    "suggest": {
+        "todomove/omnifocus": "Adds the ability to read OmniFocus backup files"  
+    },
     "require": {
         "php": ">= 5.5",
         "ramsey/uuid": "~3.5"
