@@ -5,6 +5,12 @@ namespace TodoMove\Intercessor\Contracts\Service;
 interface Reader
 {
     /**
+     * @param null|string $name
+     * @return string|$this
+     */
+    public function name($name = null);
+
+    /**
      * @return Tag[]
      */
     public function tags();

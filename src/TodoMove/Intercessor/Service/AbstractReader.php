@@ -9,10 +9,23 @@ use TodoMove\Intercessor\Task;
 
 abstract class AbstractReader implements \TodoMove\Intercessor\Contracts\Service\Reader
 {
+    protected $name = null;
     protected $tags = [];
     protected $folders = [];
     protected $projects = [];
     protected $tasks = [];
+
+
+    public function name($name = null)
+    {
+        if (is_null($name)) {
+            return $this->name;
+        }
+
+        $this->name = $name;
+
+        return $this;
+    }
 
     /**
      * @return Tag[]
