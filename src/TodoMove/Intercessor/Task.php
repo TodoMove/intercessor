@@ -2,9 +2,11 @@
 
 namespace TodoMove\Intercessor;
 
+use TodoMove\Intercessor\Traits\Metable;
+
 class Task
 {
-    use \TodoMove\Intercessor\Traits\Identifiable;
+    use \TodoMove\Intercessor\Traits\Identifiable, Metable;
 
     const ACTIVE = 'active';
     const COMPLETED = 'complete';

@@ -2,9 +2,11 @@
 
 namespace TodoMove\Intercessor;
 
+use TodoMove\Intercessor\Traits\Metable;
+
 class Tag
 {
-    use \TodoMove\Intercessor\Traits\Identifiable;
+    use \TodoMove\Intercessor\Traits\Identifiable, Metable;
 
     protected $title = '';
 
