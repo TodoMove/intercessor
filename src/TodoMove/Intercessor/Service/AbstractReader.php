@@ -2,6 +2,9 @@
 
 namespace TodoMove\Intercessor\Service;
 
+use TodoMove\Intercessor\Contracts\Service\Folders;
+use TodoMove\Intercessor\Contracts\Service\Reader;
+use TodoMove\Intercessor\Folder;
 use TodoMove\Intercessor\Project;
 use TodoMove\Intercessor\ProjectFolder;
 use TodoMove\Intercessor\Tag;
@@ -97,4 +100,34 @@ abstract class AbstractReader implements \TodoMove\Intercessor\Contracts\Service
     {
         return $this->projects[$projectId];
     }
+
+    public function addTag(Tag $tag)
+    {
+        $this->tags[$tag->id()] = $tag;
+
+        return $this;
+    }
+
+    public function addTask(Task $task)
+    {
+        $this->tags[$task->id()] = $task;
+
+        return $this;
+    }
+
+    public function addFolder(Folder $folder)
+    {
+        $this->tags[$folder->id()] = $folder;
+
+        return $this;
+    }
+
+    public function addProject(Project $project)
+    {
+        $this->tags[$project->id()] = $project;
+
+        return $this;
+    }
+
+
 }
