@@ -110,21 +110,21 @@ abstract class AbstractReader implements \TodoMove\Intercessor\Contracts\Service
 
     public function addTask(Task $task)
     {
-        $this->tags[$task->id()] = $task;
+        $this->tasks[$task->id()] = $task;
 
         return $this;
     }
 
     public function addFolder(Folder $folder)
     {
-        $this->tags[$folder->id()] = $folder;
+        $this->folders[$folder->id()] = $folder;
 
         return $this;
     }
 
     public function addProject(Project $project)
     {
-        $this->tags[$project->id()] = $project;
+        $this->projects[$project->id()] = $project;
 
         return $this;
     }
