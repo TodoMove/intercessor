@@ -2,7 +2,7 @@
 
 namespace TodoMove\Intercessor\Service;
 
-abstract class AbstractWriter implements \TodoMove\Intercessor\Contracts\Service\Reader
+abstract class AbstractWriter implements \TodoMove\Intercessor\Contracts\Service\Writer
 {
     protected $name = '';
 
