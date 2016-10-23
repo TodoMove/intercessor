@@ -2,6 +2,11 @@
 
 namespace TodoMove\Intercessor\Contracts\Service;
 
+use TodoMove\Intercessor\Folder;
+use TodoMove\Intercessor\Project;
+use TodoMove\Intercessor\Tag;
+use TodoMove\Intercessor\Task;
+
 interface Writer
 {
     /**
@@ -17,4 +22,9 @@ interface Writer
      * @return mixed
      */
     public function syncFrom(Reader $reader);
+
+    public function syncFolder(Folder $folder);
+    public function syncProject(Project $project);
+    public function syncTask(Task $task);
+    public function syncTag(Tag $tag);
 }
