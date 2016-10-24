@@ -2,11 +2,13 @@
 
 namespace TodoMove\Intercessor;
 
+use TodoMove\Intercessor\Traits\Identifiable;
 use TodoMove\Intercessor\Traits\Metable;
+use TodoMove\Intercessor\Repeat;
 
 class Project
 {
-    use \TodoMove\Intercessor\Traits\Identifiable, Metable;
+    use Identifiable, Metable;
 
     const ACTIVE = 'active';
     const INACTIVE = 'inactive';
@@ -21,6 +23,9 @@ class Project
 
     /** @var Tags */
     protected $tags;
+
+    /** @var Repeat */
+    protected $repeat;
 
     public function __construct($name = null)
     {
@@ -75,6 +80,11 @@ class Project
         return $this;
     }
 
+    /**
+     * @param const|null $status
+     *
+     * @return $this
+     */
     public function status($status = null)
     {
         if (is_null($status)) {
@@ -82,6 +92,22 @@ class Project
         }
 
         $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * @param Repeat|null $repeat
+     *
+     * @return $this|Repeat
+     */
+    public function repeat(Repeat $repeat = null)
+    {
+        if (is_null($repeat)) {
+            return $this->repeat;
+        }
+
+        $this->repeat = $repeat;
 
         return $this;
     }

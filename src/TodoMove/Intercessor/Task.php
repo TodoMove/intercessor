@@ -41,7 +41,8 @@ class Task
     /** @var Project */
     protected $project;
 
-    protected $repeat; // TODO: Create class
+    /** @var Repeat */
+    protected $repeat;
 
     public function __construct($title = null)
     {
