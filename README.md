@@ -10,6 +10,9 @@ This will be used as an intermediary between different todo list managers: OmniF
 
 `composer require todomove/intercessor`
 
+* Projects must link to folders if they have them
+* Tasks and projects must link to each other
+
 ## Task
 
 ```php
