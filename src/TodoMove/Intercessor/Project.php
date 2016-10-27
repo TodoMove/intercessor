@@ -27,6 +27,9 @@ class Project
     /** @var Repeat */
     protected $repeat;
 
+    /** @var Folder */
+    protected $folder;
+
     public function __construct($name = null)
     {
         $this->name($name);
@@ -108,6 +111,22 @@ class Project
         }
 
         $this->repeat = $repeat;
+
+        return $this;
+    }
+
+    /**
+     * @param Folder|null $folder
+     *
+     * @return $this|Folder
+     */
+    public function folder(Folder $folder = null)
+    {
+        if (is_null($folder)) {
+            return $this->folder;
+        }
+
+        $this->folder = $folder;
 
         return $this;
     }
