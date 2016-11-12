@@ -11,7 +11,7 @@ interface Reader
 {
     /**
      * @param null|string $name
-     * 
+     *
      * @return string|$this
      */
     public function name($name = null);
