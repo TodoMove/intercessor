@@ -17,7 +17,7 @@ trait Metable
         }
 
         if (is_null($value)) { // This does mean you can't store any metadata with the value of null, but "it's a sacrifice I'm willing to make" (Lord Farquaad, Shrek)
-            return $this->meta[$key] ?: null;
+            return (array_key_exists($key, $this->meta)) ? $this->meta[$key] : null;
         }
 
         $this->meta[$key] = $value;
