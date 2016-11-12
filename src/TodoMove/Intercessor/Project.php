@@ -4,7 +4,6 @@ namespace TodoMove\Intercessor;
 
 use TodoMove\Intercessor\Traits\Identifiable;
 use TodoMove\Intercessor\Traits\Metable;
-use TodoMove\Intercessor\Repeat;
 
 class Project
 {

@@ -24,7 +24,10 @@ interface Writer
     public function syncFrom(Reader $reader);
 
     public function syncFolder(Folder $folder);
+
     public function syncProject(Project $project);
+
     public function syncTask(Task $task);
+
     public function syncTag(Tag $tag);
 }

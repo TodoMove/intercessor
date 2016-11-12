@@ -3,7 +3,6 @@
 namespace TodoMove\Intercessor\Service;
 
 use TodoMove\Intercessor\Contracts\Service\Folders;
-use TodoMove\Intercessor\Contracts\Service\Reader;
 use TodoMove\Intercessor\Folder;
 use TodoMove\Intercessor\Project;
 use TodoMove\Intercessor\ProjectFolder;
@@ -128,6 +127,4 @@ abstract class AbstractReader implements \TodoMove\Intercessor\Contracts\Service
 
         return $this;
     }
-
-
 }
