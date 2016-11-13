@@ -47,10 +47,10 @@ class Repeat
     public function interval($interval = null)
     {
         if (is_null($interval)) {
-            return $this->interval;
+            return (int) $this->interval;
         }
 
-        $this->interval = $interval;
+        $this->interval = (int) $interval;
 
         return $this;
     }
